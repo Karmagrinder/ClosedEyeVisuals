@@ -1,0 +1,17 @@
+C:\Users\Komal\Documents\GitHub\ClosedEyeVisuals_V1\ClosedEyedVisualsApp\ClosedEyedVisualsApp\obj\Debug\ClosedEyedVisualsApp.csprojResolveAssemblyReference.cache
+C:\Users\Komal\Documents\GitHub\ClosedEyeVisuals_V1\ClosedEyedVisualsApp\ClosedEyedVisualsApp\bin\Debug\ClosedEyedVisualsApp.dll
+C:\Users\Komal\Documents\GitHub\ClosedEyeVisuals_V1\ClosedEyedVisualsApp\ClosedEyedVisualsApp\bin\Debug\ClosedEyedVisualsApp.pdb
+C:\Users\Komal\Documents\GitHub\ClosedEyeVisuals_V1\ClosedEyedVisualsApp\ClosedEyedVisualsApp\bin\Debug\AForge.dll
+C:\Users\Komal\Documents\GitHub\ClosedEyeVisuals_V1\ClosedEyedVisualsApp\ClosedEyedVisualsApp\bin\Debug\AForge.Imaging.dll
+C:\Users\Komal\Documents\GitHub\ClosedEyeVisuals_V1\ClosedEyedVisualsApp\ClosedEyedVisualsApp\bin\Debug\AForge.Math.dll
+C:\Users\Komal\Documents\GitHub\ClosedEyeVisuals_V1\ClosedEyedVisualsApp\ClosedEyedVisualsApp\bin\Debug\AForge.Video.DirectShow.dll
+C:\Users\Komal\Documents\GitHub\ClosedEyeVisuals_V1\ClosedEyedVisualsApp\ClosedEyedVisualsApp\bin\Debug\AForge.Video.dll
+C:\Users\Komal\Documents\GitHub\ClosedEyeVisuals_V1\ClosedEyedVisualsApp\ClosedEyedVisualsApp\bin\Debug\AForge.Vision.dll
+C:\Users\Komal\Documents\GitHub\ClosedEyeVisuals_V1\ClosedEyedVisualsApp\ClosedEyedVisualsApp\bin\Debug\AForge.xml
+C:\Users\Komal\Documents\GitHub\ClosedEyeVisuals_V1\ClosedEyedVisualsApp\ClosedEyedVisualsApp\bin\Debug\AForge.Imaging.xml
+C:\Users\Komal\Documents\GitHub\ClosedEyeVisuals_V1\ClosedEyedVisualsApp\ClosedEyedVisualsApp\bin\Debug\AForge.Math.xml
+C:\Users\Komal\Documents\GitHub\ClosedEyeVisuals_V1\ClosedEyedVisualsApp\ClosedEyedVisualsApp\bin\Debug\AForge.Video.xml
+C:\Users\Komal\Documents\GitHub\ClosedEyeVisuals_V1\ClosedEyedVisualsApp\ClosedEyedVisualsApp\bin\Debug\AForge.Video.DirectShow.xml
+C:\Users\Komal\Documents\GitHub\ClosedEyeVisuals_V1\ClosedEyedVisualsApp\ClosedEyedVisualsApp\bin\Debug\AForge.Vision.xml
+C:\Users\Komal\Documents\GitHub\ClosedEyeVisuals_V1\ClosedEyedVisualsApp\ClosedEyedVisualsApp\obj\Debug\ClosedEyedVisualsApp.dll
+C:\Users\Komal\Documents\GitHub\ClosedEyeVisuals_V1\ClosedEyedVisualsApp\ClosedEyedVisualsApp\obj\Debug\ClosedEyedVisualsApp.pdb
