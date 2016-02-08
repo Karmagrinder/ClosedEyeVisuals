@@ -67,8 +67,10 @@
             this.textBox_VideoMode = new System.Windows.Forms.TextBox();
             this.label_VideoMode = new System.Windows.Forms.Label();
             this.tabPage_OCR = new System.Windows.Forms.TabPage();
-            this.button_StartOCR = new System.Windows.Forms.Button();
             this.textBox_OcrResult = new System.Windows.Forms.TextBox();
+            this.button_StartOCR = new System.Windows.Forms.Button();
+            this.label_OcrImage = new System.Windows.Forms.Label();
+            this.textBox_OcrImage = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_ImageSource)).BeginInit();
             this.tabPage_Main.SuspendLayout();
             this.tabPage_TemplateDetection.SuspendLayout();
@@ -435,6 +437,8 @@
             // 
             // tabPage_OCR
             // 
+            this.tabPage_OCR.Controls.Add(this.textBox_OcrImage);
+            this.tabPage_OCR.Controls.Add(this.label_OcrImage);
             this.tabPage_OCR.Controls.Add(this.textBox_OcrResult);
             this.tabPage_OCR.Controls.Add(this.button_StartOCR);
             this.tabPage_OCR.Location = new System.Drawing.Point(4, 22);
@@ -444,6 +448,14 @@
             this.tabPage_OCR.TabIndex = 2;
             this.tabPage_OCR.Text = "OCR";
             this.tabPage_OCR.UseVisualStyleBackColor = true;
+            // 
+            // textBox_OcrResult
+            // 
+            this.textBox_OcrResult.Location = new System.Drawing.Point(3, 348);
+            this.textBox_OcrResult.Multiline = true;
+            this.textBox_OcrResult.Name = "textBox_OcrResult";
+            this.textBox_OcrResult.Size = new System.Drawing.Size(317, 106);
+            this.textBox_OcrResult.TabIndex = 1;
             // 
             // button_StartOCR
             // 
@@ -455,13 +467,21 @@
             this.button_StartOCR.UseVisualStyleBackColor = true;
             this.button_StartOCR.Click += new System.EventHandler(this.button_StartOCR_Click);
             // 
-            // textBox_OcrResult
+            // label_OcrImage
             // 
-            this.textBox_OcrResult.Location = new System.Drawing.Point(3, 348);
-            this.textBox_OcrResult.Multiline = true;
-            this.textBox_OcrResult.Name = "textBox_OcrResult";
-            this.textBox_OcrResult.Size = new System.Drawing.Size(317, 106);
-            this.textBox_OcrResult.TabIndex = 1;
+            this.label_OcrImage.AutoSize = true;
+            this.label_OcrImage.Location = new System.Drawing.Point(25, 19);
+            this.label_OcrImage.Name = "label_OcrImage";
+            this.label_OcrImage.Size = new System.Drawing.Size(56, 13);
+            this.label_OcrImage.TabIndex = 2;
+            this.label_OcrImage.Text = "OcrImage:";
+            // 
+            // textBox_OcrImage
+            // 
+            this.textBox_OcrImage.Location = new System.Drawing.Point(88, 19);
+            this.textBox_OcrImage.Name = "textBox_OcrImage";
+            this.textBox_OcrImage.Size = new System.Drawing.Size(100, 20);
+            this.textBox_OcrImage.TabIndex = 3;
             // 
             // Form1
             // 
@@ -527,6 +547,8 @@
         private System.Windows.Forms.TabPage tabPage_OCR;
         private System.Windows.Forms.Button button_StartOCR;
         private System.Windows.Forms.TextBox textBox_OcrResult;
+        private System.Windows.Forms.TextBox textBox_OcrImage;
+        private System.Windows.Forms.Label label_OcrImage;
     }
 
 }

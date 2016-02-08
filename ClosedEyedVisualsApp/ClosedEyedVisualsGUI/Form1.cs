@@ -268,7 +268,16 @@ namespace ClosedEyedVisualsGUI
 
         private void button_StartOCR_Click(object sender, EventArgs e)
         {
-            Bitmap image = CameraImage;
+            Bitmap image;
+            if (videoSourceInitialized)
+            {
+                image = CameraImage;
+            }
+            else { 
+                image = (Bitmap)Bitmap.FromFile(textBox_OcrImage.Text);
+            }
+
+
             var ocrObj = new ClosedEyeVisualsOCR();
             var results = ocrObj.GetTextFromImage(image);
 
