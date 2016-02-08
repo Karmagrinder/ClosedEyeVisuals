@@ -11,6 +11,7 @@ using AForge.Video;
 using AForge.Video.DirectShow;
 using System.Drawing.Imaging;
 using ClosedEyedVisualsApp;
+using tessnet2;
 
 
 namespace ClosedEyedVisualsGUI
@@ -265,6 +266,19 @@ namespace ClosedEyedVisualsGUI
             }
         }
 
+        private void button_StartOCR_Click(object sender, EventArgs e)
+        {
+            Bitmap image = CameraImage;
+            var ocrObj = new ClosedEyeVisualsOCR();
+            var results = ocrObj.GetTextFromImage(image);
 
+            foreach (Word word in results) {
+                Console.WriteLine("{0} : {1}", word.Confidence, word.Text);
+                textBox_OcrResult.AppendText("Confidence:" + word.Confidence.ToString() +", Text: "+word.Text +"\n");
+                textBox_OcrResult.Refresh();
+            }
+
+
+        }
     }
 }

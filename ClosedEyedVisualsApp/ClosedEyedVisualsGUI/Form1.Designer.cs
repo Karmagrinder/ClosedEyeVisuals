@@ -61,15 +61,19 @@
             this.button_TakeSnapshot = new System.Windows.Forms.Button();
             this.tabPage_Main = new System.Windows.Forms.TabControl();
             this.tabPage_TemplateDetection = new System.Windows.Forms.TabPage();
-            this.tabPage_Settings = new System.Windows.Forms.TabPage();
-            this.label_Treshold = new System.Windows.Forms.Label();
             this.textBox_Treshold = new System.Windows.Forms.TextBox();
-            this.label_VideoMode = new System.Windows.Forms.Label();
+            this.label_Treshold = new System.Windows.Forms.Label();
+            this.tabPage_Settings = new System.Windows.Forms.TabPage();
             this.textBox_VideoMode = new System.Windows.Forms.TextBox();
+            this.label_VideoMode = new System.Windows.Forms.Label();
+            this.tabPage_OCR = new System.Windows.Forms.TabPage();
+            this.button_StartOCR = new System.Windows.Forms.Button();
+            this.textBox_OcrResult = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_ImageSource)).BeginInit();
             this.tabPage_Main.SuspendLayout();
             this.tabPage_TemplateDetection.SuspendLayout();
             this.tabPage_Settings.SuspendLayout();
+            this.tabPage_OCR.SuspendLayout();
             this.SuspendLayout();
             // 
             // label_SourceImage
@@ -293,7 +297,7 @@
             // 
             this.comboBox_VideoDevicesList.FormattingEnabled = true;
             this.comboBox_VideoDevicesList.Location = new System.Drawing.Point(122, 53);
-            this.comboBox_VideoDevicesList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox_VideoDevicesList.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox_VideoDevicesList.Name = "comboBox_VideoDevicesList";
             this.comboBox_VideoDevicesList.Size = new System.Drawing.Size(119, 21);
             this.comboBox_VideoDevicesList.TabIndex = 27;
@@ -301,7 +305,7 @@
             // button_RefreshVideoDeviceList
             // 
             this.button_RefreshVideoDeviceList.Location = new System.Drawing.Point(9, 51);
-            this.button_RefreshVideoDeviceList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_RefreshVideoDeviceList.Margin = new System.Windows.Forms.Padding(2);
             this.button_RefreshVideoDeviceList.Name = "button_RefreshVideoDeviceList";
             this.button_RefreshVideoDeviceList.Size = new System.Drawing.Size(109, 22);
             this.button_RefreshVideoDeviceList.TabIndex = 28;
@@ -316,7 +320,7 @@
             // textBox_CameraInfo
             // 
             this.textBox_CameraInfo.Location = new System.Drawing.Point(5, 169);
-            this.textBox_CameraInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_CameraInfo.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_CameraInfo.Multiline = true;
             this.textBox_CameraInfo.Name = "textBox_CameraInfo";
             this.textBox_CameraInfo.Size = new System.Drawing.Size(316, 286);
@@ -325,7 +329,7 @@
             // button_TakeSnapshot
             // 
             this.button_TakeSnapshot.Location = new System.Drawing.Point(122, 78);
-            this.button_TakeSnapshot.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_TakeSnapshot.Margin = new System.Windows.Forms.Padding(2);
             this.button_TakeSnapshot.Name = "button_TakeSnapshot";
             this.button_TakeSnapshot.Size = new System.Drawing.Size(97, 26);
             this.button_TakeSnapshot.TabIndex = 30;
@@ -337,6 +341,7 @@
             // 
             this.tabPage_Main.Controls.Add(this.tabPage_TemplateDetection);
             this.tabPage_Main.Controls.Add(this.tabPage_Settings);
+            this.tabPage_Main.Controls.Add(this.tabPage_OCR);
             this.tabPage_Main.Location = new System.Drawing.Point(3, 10);
             this.tabPage_Main.Name = "tabPage_Main";
             this.tabPage_Main.SelectedIndex = 0;
@@ -377,6 +382,22 @@
             this.tabPage_TemplateDetection.Text = "TemplateDetection";
             this.tabPage_TemplateDetection.UseVisualStyleBackColor = true;
             // 
+            // textBox_Treshold
+            // 
+            this.textBox_Treshold.Location = new System.Drawing.Point(235, 97);
+            this.textBox_Treshold.Name = "textBox_Treshold";
+            this.textBox_Treshold.Size = new System.Drawing.Size(36, 20);
+            this.textBox_Treshold.TabIndex = 24;
+            // 
+            // label_Treshold
+            // 
+            this.label_Treshold.AutoSize = true;
+            this.label_Treshold.Location = new System.Drawing.Point(154, 100);
+            this.label_Treshold.Name = "label_Treshold";
+            this.label_Treshold.Size = new System.Drawing.Size(48, 13);
+            this.label_Treshold.TabIndex = 23;
+            this.label_Treshold.Text = "Treshold";
+            // 
             // tabPage_Settings
             // 
             this.tabPage_Settings.Controls.Add(this.textBox_VideoMode);
@@ -395,21 +416,13 @@
             this.tabPage_Settings.Text = "Setings";
             this.tabPage_Settings.UseVisualStyleBackColor = true;
             // 
-            // label_Treshold
+            // textBox_VideoMode
             // 
-            this.label_Treshold.AutoSize = true;
-            this.label_Treshold.Location = new System.Drawing.Point(154, 100);
-            this.label_Treshold.Name = "label_Treshold";
-            this.label_Treshold.Size = new System.Drawing.Size(48, 13);
-            this.label_Treshold.TabIndex = 23;
-            this.label_Treshold.Text = "Treshold";
-            // 
-            // textBox_Treshold
-            // 
-            this.textBox_Treshold.Location = new System.Drawing.Point(235, 97);
-            this.textBox_Treshold.Name = "textBox_Treshold";
-            this.textBox_Treshold.Size = new System.Drawing.Size(36, 20);
-            this.textBox_Treshold.TabIndex = 24;
+            this.textBox_VideoMode.Location = new System.Drawing.Point(74, 12);
+            this.textBox_VideoMode.Name = "textBox_VideoMode";
+            this.textBox_VideoMode.Size = new System.Drawing.Size(28, 20);
+            this.textBox_VideoMode.TabIndex = 1;
+            this.textBox_VideoMode.Text = "0";
             // 
             // label_VideoMode
             // 
@@ -420,13 +433,35 @@
             this.label_VideoMode.TabIndex = 0;
             this.label_VideoMode.Text = "VideoMode";
             // 
-            // textBox_VideoMode
+            // tabPage_OCR
             // 
-            this.textBox_VideoMode.Location = new System.Drawing.Point(74, 12);
-            this.textBox_VideoMode.Name = "textBox_VideoMode";
-            this.textBox_VideoMode.Size = new System.Drawing.Size(28, 20);
-            this.textBox_VideoMode.TabIndex = 1;
-            this.textBox_VideoMode.Text = "0";
+            this.tabPage_OCR.Controls.Add(this.textBox_OcrResult);
+            this.tabPage_OCR.Controls.Add(this.button_StartOCR);
+            this.tabPage_OCR.Location = new System.Drawing.Point(4, 22);
+            this.tabPage_OCR.Name = "tabPage_OCR";
+            this.tabPage_OCR.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_OCR.Size = new System.Drawing.Size(326, 460);
+            this.tabPage_OCR.TabIndex = 2;
+            this.tabPage_OCR.Text = "OCR";
+            this.tabPage_OCR.UseVisualStyleBackColor = true;
+            // 
+            // button_StartOCR
+            // 
+            this.button_StartOCR.Location = new System.Drawing.Point(25, 58);
+            this.button_StartOCR.Name = "button_StartOCR";
+            this.button_StartOCR.Size = new System.Drawing.Size(75, 23);
+            this.button_StartOCR.TabIndex = 0;
+            this.button_StartOCR.Text = "StartOCR";
+            this.button_StartOCR.UseVisualStyleBackColor = true;
+            this.button_StartOCR.Click += new System.EventHandler(this.button_StartOCR_Click);
+            // 
+            // textBox_OcrResult
+            // 
+            this.textBox_OcrResult.Location = new System.Drawing.Point(3, 348);
+            this.textBox_OcrResult.Multiline = true;
+            this.textBox_OcrResult.Name = "textBox_OcrResult";
+            this.textBox_OcrResult.Size = new System.Drawing.Size(317, 106);
+            this.textBox_OcrResult.TabIndex = 1;
             // 
             // Form1
             // 
@@ -444,6 +479,8 @@
             this.tabPage_TemplateDetection.PerformLayout();
             this.tabPage_Settings.ResumeLayout(false);
             this.tabPage_Settings.PerformLayout();
+            this.tabPage_OCR.ResumeLayout(false);
+            this.tabPage_OCR.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -487,6 +524,9 @@
         private System.Windows.Forms.Label label_Treshold;
         private System.Windows.Forms.Label label_VideoMode;
         private System.Windows.Forms.TextBox textBox_VideoMode;
+        private System.Windows.Forms.TabPage tabPage_OCR;
+        private System.Windows.Forms.Button button_StartOCR;
+        private System.Windows.Forms.TextBox textBox_OcrResult;
     }
 
 }
