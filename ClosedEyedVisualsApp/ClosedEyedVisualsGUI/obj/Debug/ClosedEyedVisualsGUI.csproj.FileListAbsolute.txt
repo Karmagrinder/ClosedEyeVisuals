@@ -69,3 +69,5 @@ C:\GitHub\ClosedEyeVisuals\ClosedEyedVisualsApp\ClosedEyedVisualsGUI\obj\Debug\C
 C:\GitHub\ClosedEyeVisuals\ClosedEyedVisualsApp\ClosedEyedVisualsGUI\obj\Debug\ClosedEyedVisualsGUI.Form1.resources
 C:\GitHub\ClosedEyeVisuals\ClosedEyedVisualsApp\ClosedEyedVisualsGUI\obj\Debug\ClosedEyedVisualsGUI.Properties.Resources.resources
 C:\GitHub\ClosedEyeVisuals\ClosedEyedVisualsApp\ClosedEyedVisualsGUI\obj\Debug\ClosedEyedVisualsGUI.csproj.GenerateResource.Cache
+C:\Users\Komal\Documents\GitHub\ClosedEyeVisuals\ClosedEyedVisualsApp\ClosedEyedVisualsGUI\bin\Debug\FlyCap2CameraControl.dll
+C:\Users\Komal\Documents\GitHub\ClosedEyeVisuals\ClosedEyedVisualsApp\ClosedEyedVisualsGUI\bin\Debug\FlyCapture2Managed.dll

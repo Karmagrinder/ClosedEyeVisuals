@@ -51,3 +51,5 @@ C:\GitHub\ClosedEyeVisuals\ClosedEyedVisualsApp\ClosedEyedVisualsApp\bin\Debug\A
 C:\GitHub\ClosedEyeVisuals\ClosedEyedVisualsApp\ClosedEyedVisualsApp\obj\Debug\ClosedEyedVisualsApp.csprojResolveAssemblyReference.cache
 C:\GitHub\ClosedEyeVisuals\ClosedEyedVisualsApp\ClosedEyedVisualsApp\obj\Debug\ClosedEyedVisualsApp.dll
 C:\GitHub\ClosedEyeVisuals\ClosedEyedVisualsApp\ClosedEyedVisualsApp\obj\Debug\ClosedEyedVisualsApp.pdb
+C:\Users\Komal\Documents\GitHub\ClosedEyeVisuals\ClosedEyedVisualsApp\ClosedEyedVisualsApp\bin\Debug\FlyCap2CameraControl.dll
+C:\Users\Komal\Documents\GitHub\ClosedEyeVisuals\ClosedEyedVisualsApp\ClosedEyedVisualsApp\bin\Debug\FlyCapture2Managed.dll

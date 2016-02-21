@@ -12,12 +12,15 @@ using AForge.Video.DirectShow;
 using System.Drawing.Imaging;
 using ClosedEyedVisualsApp;
 using tessnet2;
-
+using System.Threading;
 
 namespace ClosedEyedVisualsGUI
 {
     public partial class Form1 : Form
     {
+        public Form1 form = null;
+       // private delegate void EnableDelegate(bool enable);
+        
         private Int32 timeStampStart;
         private int timeStampEnd;
         private int totalProcessingTime;
@@ -27,12 +30,17 @@ namespace ClosedEyedVisualsGUI
         private bool captureFromDeviceActive;
         private bool videoSourceInitialized;
         private int videoProperty_ResolutionId = 2; //0 = 720p, 1= 800x600, 2=640x480
-        private Bitmap CameraImage;
+        private Bitmap cameraImage;
         public InputDataHandler formData = new InputDataHandler();
+        private BackgroundWorker camImageUpdateThread;
+        private PointGreyFlyCapture PGRCamHandler = new PointGreyFlyCapture();
+        private AutoResetEvent camImageUpdateThreadExited = new AutoResetEvent(false);
+
 
         public Form1()
         {
             InitializeComponent();
+            form = this;
 
         }
 
@@ -122,11 +130,12 @@ namespace ClosedEyedVisualsGUI
         //eventhandler if new frame is ready
         private void video_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
-            CameraImage = (Bitmap)eventArgs.Frame.Clone();
+            cameraImage = (Bitmap)eventArgs.Frame.Clone();
             //do processing here
-            pictureBox_ImageSource.Image = CameraImage;
+            pictureBox_ImageSource.Image = cameraImage;
 
         }
+
 
         //close the device safely
         private void CloseVideoSource()
@@ -136,8 +145,9 @@ namespace ClosedEyedVisualsGUI
                 {
                     videoSource.SignalToStop();
                     videoSource = null;
-                    videoSourceInitialized = false;
+                    //videoSourceInitialized = false;
                 }
+            videoSourceInitialized = false;
         }
 
         //prevent sudden close while device is running
@@ -153,7 +163,7 @@ namespace ClosedEyedVisualsGUI
             {
                 if (videoSourceInitialized)
                 {
-                    formData.SourceImage = CameraImage;
+                    formData.SourceImage = cameraImage;
                     textBox_CameraInfo.AppendText("ImageSource Webcam..");
                     textBox_CameraInfo.Refresh();
                 }
@@ -271,7 +281,7 @@ namespace ClosedEyedVisualsGUI
             Bitmap image;
             if (videoSourceInitialized)
             {
-                image = CameraImage;
+                image = cameraImage;
             }
             else { 
                 image = (Bitmap)Bitmap.FromFile(textBox_OcrImage.Text);
@@ -289,5 +299,86 @@ namespace ClosedEyedVisualsGUI
 
 
         }
+
+
+        //Init PointGreyCam
+        private void button_startPointGreyCam_Click(object sender, EventArgs e)
+        {
+
+            if (button_startPointGreyCam.Text == "StartPointGreyCam")
+            {
+                try
+                {
+                    videoSourceInitialized = true;
+                    PGRCamHandler.StartPGRCam();
+                    StartImageUpdateThread();
+                    button_startPointGreyCam.Text = "StopPGRCam";
+                    button_startPointGreyCam.Refresh();
+
+                }
+                catch (Exception ewha)
+                {
+
+                    System.Console.WriteLine("Exception occured while initializing PGRCam:" + ewha.ToString());
+                } 
+            }
+
+            else
+            {
+                videoSourceInitialized = false;
+                PGRCamHandler.StopPGRCam();
+                camImageUpdateThreadExited.Set();
+                camImageUpdateThread.Dispose();
+                button_startPointGreyCam.Text = "StartPointGreyCam";
+                button_startPointGreyCam.Refresh();
+
+            }
+
+        }
+
+        //Thread to update UI and CamImage
+        private void StartImageUpdateThread()
+        {
+            camImageUpdateThread =  new BackgroundWorker();
+            camImageUpdateThread.ProgressChanged += new ProgressChangedEventHandler(camImageUpdateThreadProgressChanged);
+            camImageUpdateThread.DoWork += new DoWorkEventHandler(camImageUpdateThread_DoWork);
+            camImageUpdateThread.WorkerReportsProgress = true;
+            camImageUpdateThread.RunWorkerAsync();
+            
+        }
+
+        private void camImageUpdateThreadProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+           // Bitmap tmpImage = PGRCamHandler.m_processedImage.bitmap;
+            cameraImage = PGRCamHandler.m_processedImage.bitmap;
+            pictureBox_ImageSource.Image = PGRCamHandler.m_processedImage.bitmap;
+            pictureBox_ImageSource.Refresh();
+            //tmpImage.Dispose();
+        }
+
+        private void camImageUpdateThread_DoWork(object sender, DoWorkEventArgs e)
+        {
+            BackgroundWorker worker = sender as BackgroundWorker;
+
+            while (videoSourceInitialized)
+            {
+
+                // textBox_CameraInfo.Text = "PGRCam thread running ..";
+                // textBox_CameraInfo.Refresh();
+                cameraImage = PGRCamHandler.m_processedImage.bitmap;
+                worker.ReportProgress(0);
+                Thread.Sleep(13);  // 13 milliseconds is the least value you could provide, to keep the GUI responsive.
+            }
+            if (videoSourceInitialized == false)
+            {
+                camImageUpdateThreadExited.Set();
+            }
+        }
+
+
     }
+
+    
+
+
 }
